@@ -1,5 +1,4 @@
 name: Build Bluefin Flatpaks
-
 on:
   push:
     branches:
