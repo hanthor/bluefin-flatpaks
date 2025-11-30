@@ -29,5 +29,8 @@ sed -i '/^$/d' /tmp/all-flatpaks.list
 # --noninteractive assumes yes
 xargs -a /tmp/all-flatpaks.list flatpak install --system --noninteractive flathub
 
+# Generate OSTree summary
+flatpak build-update-repo --generate-static-deltas /var/lib/flatpak/repo
+
 # Clean up
 rm /tmp/system-flatpaks.list /tmp/system-flatpaks-dx.list /tmp/all-flatpaks.list
